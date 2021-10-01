@@ -1,0 +1,45 @@
+﻿@model IEnumerable<SistemaWeb.Contexto.periodo>
+
+@{
+    ViewBag.Title = "Index";
+    if (ViewBag.displayRole == 0)
+    {
+        Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    }
+    else if (ViewBag.displayRole == 1)
+    {
+        Layout = "~/Views/Shared/_LayoutManager.cshtml";
+    }
+    else if (ViewBag.displayRole == 2)
+    {
+        Layout = "~/Views/Shared/_LayoutVisit.cshtml";
+    }
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.periodo1)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.periodo1)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.cod_periodo }) |
+            @Html.ActionLink("Details", "Details", new { id=item.cod_periodo }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.cod_periodo })
+        </td>
+    </tr>
+}
+
+</table>

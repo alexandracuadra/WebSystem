@@ -1,0 +1,29 @@
+﻿@model SistemaWeb.Contexto.AspNetUserRole
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+
+<div>
+   
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AspNetRole.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AspNetRole.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AspNetUser.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AspNetUser.Email)
+        </dd>
+
+    </dl>
+</div>

@@ -1,0 +1,158 @@
+﻿@model IEnumerable<SistemaWeb.Contexto.carrera>
+
+@{ ViewBag.Title = "Index";
+
+                if (ViewBag.displayRole == 0)
+                {
+                    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+                }
+                else if (ViewBag.displayRole == 1)
+                {
+                    Layout = "~/Views/Shared/_LayoutManager.cshtml";
+                }
+                else if (ViewBag.displayRole == 2)
+                {
+                    Layout = "~/Views/Shared/_LayoutVisit.cshtml";
+                } }
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <a href="#" data-toggle="modal" data-target="#modaldialog" onclick="loadData('/Carreras/Create', 'contentdialog')" class="btn btn-sm btn-info float-lg-right">
+
+            <i class="fas fa-plus fa-sm " style="color:black;"></i> Agregar Nuevo
+        </a>
+        <h4 class="h3 mb-0 text-gray-800 text-center">Carreras</h4>
+    </div>
+    <div class="card-body">
+
+        <div class="table-responsive">
+            <table class="table table-striped" id="example" >
+                <thead class="thead-dark">
+                    <tr>
+                        <th>
+                            Nombre
+                        </th>
+                        <th>
+                            Tipo de carrera
+                        </th>
+                        <th>
+                            Modalidad
+                        </th>
+                        <th>
+                            Nombre
+                        </th>
+                        <th></th>
+                    </tr>
+
+                </thead>
+              
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tipo_carrera)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.modalidad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dpto.nombre)
+            </td>
+            <td>
+                <a href="#" data-toggle="modal" data-target="#visualEditar" onclick="loadData('/Carreras/Edit/@item.cod_carrera', 'contentedit')">  <Span class='fas fa-edit' style="color:darkgoldenrod;"></Span></a>
+                <a href="#" data-toggle="modal" data-target="#visualDetalle" onclick="loadData('/Carreras/Details/@item.cod_carrera', 'contentdetalle')"><Span class='fas fa-eye' style="color:green;"></Span></a>
+                <a href="#" data-toggle="modal" data-target="#visualEliminar" onclick="loadData('/Carreras/Delete/@item.cod_carrera', 'contenteliminar')"><Span class='fas fa-trash' style="color:red;"></Span></a>
+
+            </td>
+        </tr>
+}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <div class="modal" id="modaldialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Agregar nueva carrera </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="contentdialog">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="modal" id="visualEditar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Actualizar carrera</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="contentedit">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="visualDetalle" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Detalles de carrera</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="contentdetalle">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal" id="visualEliminar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Eliminar</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="contenteliminar">
+                </div>
+            </div>
+        </div>
+    </div>
+

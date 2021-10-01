@@ -1,0 +1,135 @@
+﻿@model IEnumerable<SistemaWeb.Contexto.AspNetUserRole>
+
+@{ ViewBag.Title = "Index";
+
+                if (ViewBag.displayRole == 0)
+                {
+                    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+                }
+                else if (ViewBag.displayRole == 1)
+                {
+                    Layout = "~/Views/Shared/_LayoutManager.cshtml";
+                }
+                else if (ViewBag.displayRole == 2)
+                {
+                    Layout = "~/Views/Shared/_LayoutVisit.cshtml";
+                } }
+
+
+<div class="card shadow">
+    <div class="card-header py-3">
+        <a href="#" data-toggle="modal" data-target="#modaldialog" onclick="loadData('/AspNetUserRoles/Create', 'contentdialog')"class="btn btn-sm btn-info float-lg-right">
+
+            <i class="fas fa-plus fa-sm " style="color:black;"></i> Agregar Nuevo
+        </a>
+        <h4 class="h3 mb-0 text-gray-800 text-center">Asignacion de Roles</h4>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="example">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>
+
+                            @Html.DisplayName("Rol")
+                        </th>
+                        <th>
+                            @Html.DisplayName("Usuario")
+                        </th>
+                        <th></th>
+                    </tr>
+
+                </thead>
+
+                @foreach (var item in Model)
+                {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AspNetRole.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AspNetUser.UserName)
+            </td>
+            <td>
+
+                <a href="#" data-toggle="modal" data-target="#visualEditar" onclick="loadData('/AspNetUserRoles/Edit/@item.id', 'contentedit')"> <Span class='fas fa-edit' style="color:darkgoldenrod;"></Span></a>
+                <a href="#" data-toggle="modal" data-target="#visualDetalle" onclick="loadData('/AspNetUserRoles/Details/@item.id', 'contentdetalle')"><Span class='fas fa-eye' style="color:green;"></Span></a>
+                <a href="#" data-toggle="modal" data-target="#visualEliminar" onclick="loadData('/AspNetUserRoles/Delete/@item.id', 'contenteliminar')"><Span class='fas fa-trash' style="color:red;"></Span></a>
+            </td>
+        </tr>
+}
+
+            </table>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="modal" id="modaldialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Crear nuevo Usuario</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="contentdialog">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="modal" id="visualEditar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Actualizar Usuario</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="contentedit">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="visualDetalle" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Detalles de Usuario</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="contentdetalle">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal" id="visualEliminar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Eliminar</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="contenteliminar">
+            </div>
+        </div>
+    </div>
+</div>
+

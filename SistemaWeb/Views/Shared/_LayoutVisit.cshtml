@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>@ViewBag.Title</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="~/Content/admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet">
+
+
+    <!-- Custom styles for this template-->
+    <link href="~/Content/admin/css/sb-admin-2.css" rel="stylesheet">
+
+
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/User/Index/">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-laugh-wink"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+            </a>
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Menus
+            </div>
+          
+
+
+            <!-- Nav Item - Horario Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseHorario" aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-file"></i>
+                    <span>Horario</span>
+                </a>
+                <div id="collapseHorario" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Configuraciones:</h6>
+                        <a class="collapse-item" href="/grupoes/index/">Grupos</a>
+                        <a class="collapse-item" href="/horario/index/">Generar horario</a>
+                        <a class="collapse-item" href="/EditHorarioProfesor/index/">Gestionar horario</a>
+                    </div>
+                </div>
+            </li>
+
+
+
+
+
+
+
+            <!-- Divider -->
+            @*<hr class="sidebar-divider">*@
+
+
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+
+        </ul>
+        <!-- End of Sidebar -->
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                @Html.Partial("_Navigation")
+                <!-- End of Topbar -->
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    @RenderBody()
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+            <!-- Footer -->
+            @Html.Partial("_Footer")
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="~/Content/admin/vendor/jquery/jquery.min.js"></script>
+    <script src="~/Content/admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="~/Content/admin/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Page level plugin JavaScript-->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script src="~/Content/admin/vendor/datatables/jquery.dataTables.js"></script>
+    <script src="~/Content/admin/vendor/datatables/dataTables.bootstrap4.js"></script>
+    <script src="~/Content/admin/js/notify.min.js"></script>
+
+
+    <script src="~/Content/admin/js/datatables-demo.js"></script>
+
+
+    <!-- Custom scripts for all pages-->
+    <script src="~/Content/admin/js/sb-admin-2.min.js"></script>
+
+    @RenderSection("scripts", required: false)
+    <script type="text/javascript">
+        function loadData(url, target_id) {
+            $("#" + target_id).html("<div class='text-center'><img src='/Images/loading.gif' /></div>");
+            $("#" + target_id).load(url);
+        }
+
+
+    </script>
+
+    <div id='modalGenerica' class='modal fade in'>
+        <div class="modal-dialog-centered modal-dialog">
+            <div class="modal-content">
+                <div id='contentModal'>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
