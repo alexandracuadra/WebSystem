@@ -1,0 +1,168 @@
+﻿@model IEnumerable<SistemaWeb.Contexto.pensum>
+
+@{ ViewBag.Title = "Index";
+
+
+    var pemsun = ViewBag.pensums;
+    
+
+
+    }
+
+
+
+<div class="card shadow">
+    <div class="card-header">
+        <div class="card-header py-3">
+            <a href="#" data-toggle="modal" data-target="#modaldialog" onclick="loadData('/pensums/Create', 'contentdialog')" class="btn btn-sm btn-info float-lg-right">
+
+                <i class="fas fa-plus fa-sm " style="color:black;"></i> Agregar Nuevo
+            </a>
+            <h4 class="h3 mb-0 text-gray-800 text-center">Pemsums</h4>
+        </div>
+
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="example">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>
+                           # de credito
+                        </th>
+                        <th>
+                            Ciclos
+                        </th>
+                        @*<th>
+                            Año de estudio
+                        </th>*@
+                        <th>
+                            Prerrequisito 1
+                        </th>
+                        <th>
+                            Prerrequisito 2
+                        </th>
+                        <th>
+                            Materia
+                        </th>
+                        <th>
+                            Plan de estudio
+                        </th>
+                        <th>
+                            Total de Horas
+                        </th>
+                        <th></th>
+                    </tr>
+
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.N_credito)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ciclo)
+                    </td>
+                    @*<td>
+                        @Html.DisplayFor(modelItem => item.anio_est)
+                    </td>*@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.prerrequisito1)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.prerrequisito2)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.materia.nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Plan.nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.total_horas)
+                    </td>
+                    <td>
+                        <a href="#" data-toggle="modal" data-target="#visualEditar" onclick="loadData('/pensums/Edit/@item.cod_asig', 'contentedit')">  <Span class='fas fa-edit' style="color:darkgoldenrod;"></Span></a>
+                        <a href="#" data-toggle="modal" data-target="#visualDetalle" onclick="loadData('/pensums/Details/@item.cod_asig', 'contentdetalle')">  <Span class='fas fa-eye' style="color:green;"></Span><br></a>
+                        <a href="#" data-toggle="modal"  data-target="#visualEliminar" onclick="loadData('/pensums/Delete/@item.cod_asig', 'contenteliminar')">  <Span class='fas fa-trash' style="color:red;"></Span></a>
+                    </td>
+                </tr>}
+
+                </tbody>
+
+            </table>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<div class="modal" id="modaldialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Crear nuevo pensums</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="contentdialog">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="modal" id="visualEditar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Actualizar pensums</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="contentedit">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="visualDetalle" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Detalles de pensums</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="contentdetalle">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal" id="visualEliminar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Eliminar</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="contenteliminar">
+            </div>
+        </div>
+    </div>
+</div>

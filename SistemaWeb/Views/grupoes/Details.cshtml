@@ -1,0 +1,45 @@
+﻿@model SistemaWeb.Contexto.grupo
+
+@{
+    ViewBag.Title = "Details";
+    Layout = null;
+}
+
+<div>
+    
+    <dl class="dl-horizontal">
+        <dt>
+           Nombre
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre)
+        </dd>
+
+        <dt>
+           Capacidad
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.capacidad)
+        </dd>
+
+        <dt>
+          Tipo de ciclo
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tipo_ciclo)
+        </dd>
+
+        <dt>
+           Asignatura
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pensum.anio_est)
+        </dd>
+
+    </dl>
+</div>
+

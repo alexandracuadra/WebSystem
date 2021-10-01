@@ -1,0 +1,118 @@
+﻿@model IEnumerable<Microsoft.AspNet.Identity.EntityFramework.IdentityRole>
+
+
+@{ ViewBag.Title = "Index";
+
+}
+
+
+
+<div class="card shadow">
+    <div class="card-header py-3">
+        <a href="#" data-toggle="modal" data-target="#modaldialog" onclick="loadData('/RolesAdmin/CreateRol', 'contentdialog')" class="btn btn-sm btn-info float-lg-right">
+
+            <i class="fas fa-plus fa-sm " style="color:black;"></i> Agregar Nuevo
+        </a>
+        @Html.ActionLink("Administrar Roles a Usuario", "ManageUserRoles",null , new {@class="btn btn-success" })
+        <h4 class="h3 mb-0 text-gray-800 text-center">Listado de Roles</h4>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="example">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Name)
+                        </th>
+                        <th>
+                            Acciones
+                        </th>
+                    </tr>
+
+                </thead>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            <a href="#" data-toggle="modal" class="btn btn-warning" data-target="#visualEditar" onclick="loadData('/RolesAdmin/EditRole/@item.Id', 'contentedit')">  <Span class='fas fa-edit' ></Span></a>
+                            
+                            <a href="#" data-toggle="modal" class="btn btn-danger" data-target="#visualEliminar" onclick="loadData('/RolesAdmin/DeleteRol/@item.Id', 'contenteliminar')"><Span class='fas fa-trash' ></Span></a>
+                        </td>
+                    </tr>
+                }
+
+            </table>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="modaldialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Crear nuevo</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="contentdialog">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="modal" id="visualEditar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Actualizar</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="contentedit">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="visualDetalle" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Detalles</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="contentdetalle">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal" id="visualEliminar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Eliminar</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="contenteliminar">
+            </div>
+        </div>
+    </div>
+</div>
+
+

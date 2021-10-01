@@ -1,0 +1,27 @@
+﻿@model Microsoft.AspNet.Identity.EntityFramework.IdentityUser
+
+@{
+    ViewBag.Title = "Eliminar";
+    Layout = null;
+}
+
+
+
+
+<div>
+
+    <div class="alert alert-danger" role="alert">
+        <h4>Seguro que desea eliminar al Usuario? </h4>
+                @Html.DisplayFor(model => model.UserName)            
+    </div>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+                <div class="form-actions no-color">
+                    <input type="submit" value="Eliminar" class="btn btn-danger" />
+                </div>
+     }
+</div>
+
+

@@ -1,0 +1,58 @@
+﻿@model SistemaWeb.clases.pemsun
+@{
+    /**/
+
+    if (ViewBag.displayRole == 0)
+    {
+        Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    }
+    else if (ViewBag.displayRole == 1)
+    {
+        Layout = "~/Views/Shared/_LayoutManager.cshtml";
+    }
+    else if (ViewBag.displayRole == 2)
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+    ViewBag.Title = "Planes de Estudio";
+
+   
+}
+<center>
+    <div class="card shadow">
+        <div class="card-header">
+            <h4 class="h3 mb-0 text-gray-800 text-center">Pensums</h4>
+        </div>
+        <div class="card-body">
+            <form id="myform" enctype="multipart/form-data" method="post" action="/pensums/Index">
+
+                <div class="form-group">
+                    <h3> Seleccionar Carrera </h3>
+                    <div class="col-md-10">
+                        @Html.DropDownList("cod_carrera", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.cod_carrera, "", new { @class = "text-danger" })
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <h3>Plan de estudio </h3>
+                    <div class="col-md-10">
+                        @Html.DropDownList("cod_plan", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.cod_plan, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div>
+                    <button type="submit" id="h" class="btn btn-outline-success">Ver Pemsun</button>
+                </div>
+
+
+            </form>
+
+        </div>
+    </div>
+
+</center>
+
+

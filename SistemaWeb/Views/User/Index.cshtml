@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "Index";
+
+    if (ViewBag.displayMenu == "Admin")
+    {
+
+
+
+        { Response.Redirect("~/User/Admin", false); }
+
+
+    }
+    else if (ViewBag.displayMenu == "Manager")
+    {
+
+        { Response.Redirect("~/User/Manager", false); }
+    }
+    else
+    {
+        { Response.Redirect("~/User/Docente", false); }
+
+    }
+
+}

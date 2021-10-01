@@ -1,0 +1,137 @@
+﻿@model IEnumerable<SistemaWeb.Contexto.grupo>
+
+@{
+    ViewBag.Title = "Index";
+
+
+}
+<div class="card">
+    <div class="card-header">
+        <a href="#" data-toggle="modal" data-target="#modaldialog" onclick="loadData('/grupoes/Create', 'contentdialog')" class="btn btn-sm btn-info float-lg-right">
+
+            <i class="fas fa-plus fa-sm " style="color:black;"></i> Agregar Nuevo
+        </a>
+       
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-striped" id="example">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>
+                            Nombre
+                        </th>
+                        <th>
+                            Capacidad
+                        </th>
+                        <th>
+                            Tipo de ciclo
+                        </th>
+                        <th>
+                            Asignatura
+                        </th>
+                        <th></th>
+                    </tr>
+
+                </thead>
+
+                @foreach (var item in Model)
+                {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.capacidad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tipo_ciclo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pensum.materia)
+            </td>
+            <td>
+
+                <a href="#" data-toggle="modal" class="btn btn-warning" data-target="#visualEditar" onclick="loadData('/grupoes/Edit/@item.cod_grupo', 'contentedit')">  <i class='fas fa-edit' ></i></a>
+                <a href="#" data-toggle="modal" class="btn btn-success" data-target="#visualDetalle" onclick="loadData('/grupoes/Details/@item.cod_grupo', 'contentdetalle')">  <i class='fas fa-eye' ></i><br></a>
+                <a href="#" data-toggle="modal" class='btn btn-danger' data-target="#visualEliminar" onclick="loadData('/grupoes/Delete/@item.cod_grupo', 'contenteliminar')">  <i class='fas fa-trash'></i></a>
+
+
+            </td>
+        </tr>
+}
+
+            </table>
+
+        </div>
+
+    </div>
+</div>
+
+
+
+
+<div class="modal" id="modaldialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Agregar nuevo</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="contentdialog">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="modal" id="visualEditar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Actualizar</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="contentedit">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="visualDetalle" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Detalles</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="contentdetalle">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal" id="visualEliminar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Eliminar</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="contenteliminar">
+            </div>
+        </div>
+    </div>
+</div>
+

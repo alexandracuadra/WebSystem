@@ -1,0 +1,85 @@
+﻿@using SistemaWeb.Models
+@model LoginViewModel
+@{ Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Iniciar sesión"; }
+
+<div class="container-fluid pt-lg-5 pb-lg-5 pr-5" style="background-image: url('../../Content/admin/img/material.jpg');width: 100%;padding-right: 15px;
+     padding-left: 15px;
+     margin-right: auto;">
+    <div class="row ">
+        <div class="col-md-5 ml-md-auto">
+            <div class="card bg-transparent">
+                @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                <div class="card-body ">
+                    <h3>Accede a la plataforma</h3>
+                    @Html.AntiForgeryToken()
+
+
+                    <br />
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.UserName, new { @class = "col-md-8 control-label" })
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <i class="fa fa-envelope ">
+                                    </i>
+                                </div>
+
+                            </div>
+                            @Html.TextBoxFor(m => m.UserName, new { @placeholder = "Nombre de usuario", @required = "required", @class = "form-control" })
+                        </div>
+                        @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
+                    </div>
+
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Password, new { @class = "col-md-10 control-label" })
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <i class="fa fa-lock add-on">
+                                    </i>
+                                </div>
+
+                            </div>
+                            @Html.PasswordFor(m => m.Password, new { @placeholder = "Contraseña", @required = "required", @class = "form-control" })
+
+                        </div>
+                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                    </div>
+
+                    @*<div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <div class="checkbox">
+                                @Html.CheckBoxFor(m => m.RememberMe)
+                                @Html.LabelFor(m => m.RememberMe)
+                            </div>
+                        </div>
+                    </div>*@
+
+
+
+                </div><!-- end of .card-body -->
+
+                            <div class="card-footer bg-transparent">
+                                <div class="form-group">
+                                    <div class="col-md-10">
+                                        <input type="submit" value="Iniciar sesión" class="btn btn-primary btn-sm " />
+                                    </div>
+                                </div>
+                            </div><!-- end of .card-footer -->}
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+}

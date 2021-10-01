@@ -1,0 +1,248 @@
+﻿@model SistemaWeb.Contexto.horariogeneracion
+@{
+
+    /**/
+
+    /* foreach (var H in dt.Rows) foreach (var H in dt.Rows)*/
+
+    /* Forma de prueva acer un for con un ciclo de periodo y para optener todos los periodos en una tabla luego trabajar por colunna de dias con sus ciclos correspondientes  */
+
+    var dt1 = ViewBag.TablaL;
+    var dt2 = ViewBag.TablaM;
+    var dt3 = ViewBag.TablaMI;
+    var dt4 = ViewBag.TablaJ;
+    var dt5 = ViewBag.TablaV;
+    var periodo = ViewBag.Tabla1;
+    var dpto = ViewBag.depart;
+    var d = ViewBag.d;
+    var p = ViewBag.p;
+    var c = ViewBag.c;
+    var a = ViewBag.a;
+
+
+
+
+
+    ViewBag.Title = "Horario";
+}
+
+
+
+
+
+
+
+
+    <div class="card shadow">
+        <div class="card-header">
+            <h2 class="h3 mb-0 text-gray-800 text-center">Horario de clases</h2>
+        </div>
+        <div class="card-body">
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+
+                        <th>
+                            Hora
+                        </th>
+
+                        <th>
+                            Lunes
+                        </th>
+                        <th>
+                            Martes
+                        </th>
+                        <th>
+                            Miercoles
+                        </th>
+                        <th>
+                            Jueves
+                        </th>
+                        <th>
+                            Viernes
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+
+                @{
+                    for (int i = 0; i < periodo.Rows.Count; i++)
+                    {
+
+
+                        <tr>
+                            <td>
+
+                                @periodo.Rows[i].ItemArray[1].ToString();
+
+                            </td>
+                            <td>
+                                @for (int L = 0; L < dt1.Rows.Count; L++)
+                                {
+                                    if (@dt1.Rows[L].ItemArray[4].ToString() == @periodo.Rows[i].ItemArray[1].ToString())
+                                    {
+
+                                        @dt1.Rows[L].ItemArray[1].ToString(); <br />
+                                        @dt1.Rows[L].ItemArray[2].ToString(); <br />
+                                        @dt1.Rows[L].ItemArray[3].ToString(); <br />
+
+                                        String listaedit = @dt1.Rows[L].ItemArray[6].ToString();
+
+
+                                        Session["le"] = listaedit;
+
+
+
+
+                                        <div><a href="#" class="btn btn-warning" onclick="ShowModal(@listaedit)"><i class="fas fa-edit"></i>Editar </a> </div>
+
+
+                                    }
+                                    else
+                                    {
+
+                                    }
+
+                                }
+
+
+                            </td>
+
+                            <td>
+                                @for (int M = 0; M < dt2.Rows.Count; M++)
+                                {
+                                    if (@dt2.Rows[M].ItemArray[4].ToString() == @periodo.Rows[i].ItemArray[1].ToString())
+                                    {
+
+                                        @dt2.Rows[M].ItemArray[1].ToString(); <br />
+                                        @dt2.Rows[M].ItemArray[2].ToString(); <br />
+                                        @dt2.Rows[M].ItemArray[3].ToString(); <br />
+                                        String listaedit = @dt2.Rows[M].ItemArray[6].ToString();
+
+                                        Session["le"] = listaedit;
+
+                                        <div><a href="#" class="btn btn-warning" onclick="ShowModal(@listaedit)"><i class="fas fa-edit"></i>Editar </a> </div>
+                                    }
+                                    else
+                                    {
+
+                                    }
+
+                                }
+                            </td>
+
+                            <td>
+
+
+                                @for (int MI = 0; MI < dt3.Rows.Count; MI++)
+                                {
+                                    if (@dt3.Rows[MI].ItemArray[4].ToString() == @periodo.Rows[i].ItemArray[1].ToString())
+                                    {
+
+                                        @dt3.Rows[MI].ItemArray[1].ToString(); <br />
+                                        @dt3.Rows[MI].ItemArray[2].ToString(); <br />
+                                        @dt3.Rows[MI].ItemArray[3].ToString(); <br />
+                                        String listaedit = @dt3.Rows[MI].ItemArray[6].ToString();
+
+                                        Session["le"] = listaedit;
+                                        <div><a href="#" class="btn btn-warning" onclick="ShowModal(@listaedit)"><i class="fas fa-edit"></i>Editar </a> </div>
+
+
+                                    }
+                                    else
+                                    {
+
+                                    }
+
+                                }
+
+                            </td>
+
+                            <td>
+
+                                @for (int J = 0; J < dt4.Rows.Count; J++)
+                                {
+                                    if (@dt4.Rows[J].ItemArray[4].ToString() == @periodo.Rows[i].ItemArray[1].ToString())
+                                    {
+
+                                        @dt4.Rows[J].ItemArray[1].ToString(); <br />
+                                        @dt4.Rows[J].ItemArray[2].ToString(); <br />
+                                        @dt4.Rows[J].ItemArray[3].ToString(); <br />
+
+                                        String listaedit = @dt4.Rows[J].ItemArray[6].ToString();
+
+                                        Session["le"] = listaedit;
+                                        <div><a href="#" class="btn btn-warning" onclick="ShowModal(@listaedit)"><i class="fas fa-edit"></i>Editar </a> </div>
+                                    }
+                                    else
+                                    {
+
+                                    }
+
+                                }
+                            </td>
+
+                            <td>
+
+
+                                @for (int V = 0; V < dt5.Rows.Count; V++)
+                                {
+                                    if (@dt5.Rows[V].ItemArray[4].ToString() == @periodo.Rows[i].ItemArray[1].ToString())
+                                    {
+
+                                        @dt5.Rows[V].ItemArray[1].ToString(); <br />
+                                        @dt5.Rows[V].ItemArray[2].ToString(); <br />
+                                        @dt5.Rows[V].ItemArray[3].ToString(); <br />
+
+                                        String listaedit = @dt5.Rows[V].ItemArray[6].ToString();
+
+                                        Session["le"] = listaedit;
+                                        <div><a href="#" class="btn btn-warning" onclick="ShowModal(@listaedit)"><i class="fas fa-edit"></i>Editar </a> </div>
+                                    }
+                                    else
+                                    {
+
+                                    }
+
+                                }
+                            </td>
+
+                        </tr>
+
+
+                    }
+                }
+
+
+
+
+            </table>
+
+        </div>
+
+    </div>
+    
+
+
+
+
+@section Scripts {
+    <script>
+
+        var ShowModal = function (listaedit) {
+            var url = "/EditHorarioProfesor/Edit?listaedit=" + listaedit;
+            $("#contentModal").load(url, function () {
+                $("#modalGenerica").modal("show");
+
+            })
+
+        }
+
+    </script>
+}
+
+
+

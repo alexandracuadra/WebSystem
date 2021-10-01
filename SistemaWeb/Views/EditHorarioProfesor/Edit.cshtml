@@ -1,0 +1,125 @@
+﻿@model SistemaWeb.clases.editHorariofin
+
+<section>
+    <form id="Formulario" >
+        <div class="modal-shadow ">
+            <div class="card text-center">
+                <div class="card-header bg-primary text-black-50">
+                    <h4>@ViewBag.Title</h4>
+                    
+                </div>
+            </div>
+
+            <div class="card-body">
+                <div class="form-group text-center">       
+                        Seleccionar Dia
+                        <div class="col-md-auto">
+
+                            @Html.DropDownListFor(model => model.id, ViewBag.id as SelectList, "--Seleccionar un dia --", new { @class = "form-control" })
+                        </div>                  
+                </div>
+                <div class="form-group text-center">                  
+                        Seleccionar Periodo
+                        <div class="col-md-auto">
+
+                            @Html.DropDownListFor(model => model.cod_periodo, new SelectList(""), "--Seleccionar un periodo--", new { @class = "form-control" })
+
+                        </div>                 
+                </div>
+                <div class="form-group text-center">                    
+                        seleccionar Aula
+                        <div class="col-md-auto">
+
+                            @Html.DropDownListFor(model => model.aula, new SelectList(""), "--Seleccionar Aula--", new { @class = "form-control" })
+
+                        </div>                    
+                </div>
+                <div style="text-align:center; display:none" id="LoaderDiv">
+                    <img src="~/Images/loadingg.gif" width="150"/>
+                </div>
+
+                <script>
+
+
+                    //Variables Globales
+                    var dia;
+                    var Dp;
+
+                    $(document).ready(function () {
+
+                        // Dp = document.getElementsByName("#cod_periodo").val;
+
+                        $("#id").change(function () {
+                            $.get("/EditHorarioProfesor/Getdias", { id: $("#id").val() }, function (data) {
+                                $("#cod_periodo").empty();
+                                $.each(data, function (index, row) {
+                                    $("#cod_periodo").append("<option value= '" + row + "'>" + row + "</option>")
+                                    dia = document.getElementById("id").value;
+
+                                });
+                            })
+                        });
+
+
+
+                        //dia = document.getElementById("#id").val;
+                        $("#cod_periodo").change(function () {
+                            $.get("/EditHorarioProfesor/Getperiodo", { cod_periodo: $("#cod_periodo").val() }, function (data) {
+                                $("#aula").empty();
+                                $.each(data, function (index, row) {
+                                    $("#aula").append("<option value= '" + row + "'>" + row + "</option>")
+                                });
+
+                            });
+                        })
+
+
+                        $("#btnSubmit").click(function (event) {
+                            //event.preventDefault();
+                            var myformdata = $("#Formulario").serialize();
+                            $.ajax({
+                                type: "POST",
+                                url: "/EditHorarioProfesor/EditProfesorHorario",
+                                data: myformdata,
+                                success: function () {
+                                    $("#LoaderDiv").show();
+                                    $("#modalGenerica").modal("hide");                                   
+                                    $.notify("Cambios realizados !!", "success");
+                                    
+                                    /*window.location.href = "/EditHorarioProfesor/EditResult";*/
+                                   
+                                },
+                                error: function () { // función que va a ejecutar si hubo algún tipo de error en el pedido
+                                    $.notify("Ocurrio un error!", "error");
+                                }
+                            })
+                        })
+
+
+                    });
+
+
+
+                </script>
+
+
+
+                @{
+                    String verificacion = "activo";
+
+                    Session["verificacion"] = verificacion;
+                }
+
+                <div class="form-group text-center">                    
+                    <a href="#" id="btnSubmit" class="btn btn-success">
+                        Actualizar
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+</section>
+
