@@ -1,11 +1,35 @@
 ﻿@model SistemaWeb.Contexto.horariogeneracion
 @{
 
+<<<<<<< HEAD
+=======
+    if (ViewBag.displayRole == 0)
+    {
+        Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    }
+    else if (ViewBag.displayRole == 1)
+    {
+        Layout = "~/Views/Shared/_LayoutManager.cshtml";
+    }
+    else if (ViewBag.displayRole == 2)
+    {
+        Layout = "~/Views/Shared/_LayoutVisit.cshtml";
+    }
+>>>>>>> 0366b90f880898ebe2dbed61d65db7cc3cb8723b
 
     ViewBag.Title = "Horario";
 }
 
 
+<<<<<<< HEAD
+=======
+@Styles.Render("~/Content/css")
+@Scripts.Render("~/bundles/modernizr")
+@Styles.Render("~/Content/luis")
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+
+>>>>>>> 0366b90f880898ebe2dbed61d65db7cc3cb8723b
 
 
 <!DOCTYPE html>

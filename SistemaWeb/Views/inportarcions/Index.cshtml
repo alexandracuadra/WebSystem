@@ -2,6 +2,21 @@
 
 @{
 
+<<<<<<< HEAD
+=======
+    if (ViewBag.displayRole == 0)
+    {
+        Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    }
+    else if (ViewBag.displayRole == 1)
+    {
+        Layout = "~/Views/Shared/_LayoutManager.cshtml";
+    }
+    else if (ViewBag.displayRole == 2)
+    {
+        Layout = "~/Views/Shared/_LayoutVisit.cshtml";
+    }
+>>>>>>> 0366b90f880898ebe2dbed61d65db7cc3cb8723b
     ViewBag.Title = "Index";
 }
 

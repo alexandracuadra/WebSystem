@@ -7,7 +7,11 @@ $(document).ready(function() {
             "processing": "Procesando...",
             "lengthMenu": "Mostrando _MENU_ registros",
             "zeroRecords": "No se encontraron resultados",
+<<<<<<< HEAD
             "info": "Mostrando registros del _START_ al _END_",
+=======
+            "info": "Mostrando registros del _START_ al _END_",            
+>>>>>>> 0366b90f880898ebe2dbed61d65db7cc3cb8723b
             "loadingRecords": "Cargando...",
             "search": "Buscar:",
             "infoFiltered": "(filtrado de un total de _MAX_ total registros)",
@@ -21,9 +25,12 @@ $(document).ready(function() {
 
 
     });
+<<<<<<< HEAD
 
  
 
 
+=======
+>>>>>>> 0366b90f880898ebe2dbed61d65db7cc3cb8723b
     
 });

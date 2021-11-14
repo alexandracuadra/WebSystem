@@ -1063,6 +1063,10 @@ C:\Users\alexa\source\repos\SistemaWeb\SistemaWeb\bin\roslyn\VBCSCompiler.exe
 C:\Users\alexa\source\repos\SistemaWeb\SistemaWeb\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\alexa\source\repos\SistemaWeb\SistemaWeb\obj\Debug\SistemaWeb.csproj.ResolveComReference.cache
 C:\Users\alexa\source\repos\SistemaWeb\SistemaWeb\obj\Debug\SistemaWeb.csproj.CoreCompileInputs.cache
+<<<<<<< HEAD
+=======
+C:\Users\alexa\source\repos\SistemaWeb\SistemaWeb\obj\Debug\SistemaWeb.csproj.CopyComplete
+>>>>>>> 0366b90f880898ebe2dbed61d65db7cc3cb8723b
 C:\Users\alexa\source\repos\SistemaWeb\SistemaWeb\obj\Debug\SistemaWeb.dll
 C:\Users\alexa\source\repos\SistemaWeb\SistemaWeb\obj\Debug\SistemaWeb.pdb
 C:\Users\alexa\source\repos\SistemaWeb\SistemaWeb\obj\Debug\SistemaWeb.csproj.AssemblyReference.cache

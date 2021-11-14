@@ -3,6 +3,22 @@
 @{
     ViewBag.Title = "Index";
 
+<<<<<<< HEAD
+=======
+    if (ViewBag.displayRole == 0)
+    {
+        Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    }
+    else if (ViewBag.displayRole == 1)
+    {
+        Layout = "~/Views/Shared/_LayoutManager.cshtml";
+    }
+    else if (ViewBag.displayRole == 2)
+    {
+        Layout = "~/Views/Shared/_LayoutVisit.cshtml";
+    }
+
+>>>>>>> 0366b90f880898ebe2dbed61d65db7cc3cb8723b
 
 }
 <div class="card">
@@ -11,12 +27,20 @@
 
             <i class="fas fa-plus fa-sm " style="color:black;"></i> Agregar Nuevo
         </a>
+<<<<<<< HEAD
        
+=======
+        <h2 class="h3 mb-0 text-gray-800 text-center">Listado de Grupos</h2>
+>>>>>>> 0366b90f880898ebe2dbed61d65db7cc3cb8723b
     </div>
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-striped" id="example">
+<<<<<<< HEAD
                 <thead class="thead-dark">
+=======
+                <thead>
+>>>>>>> 0366b90f880898ebe2dbed61d65db7cc3cb8723b
                     <tr>
                         <th>
                             Nombre

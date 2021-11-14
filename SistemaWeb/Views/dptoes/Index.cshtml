@@ -23,8 +23,13 @@
 
 <div class="card">
     <div class="card-header">
+<<<<<<< HEAD
         <a href="#" data-toggle="modal" data-target="#modaldialog" onclick="loadData('/Dptoes/Create', 'contentdialog')"  class="btn btn-sm btn-outline-info float-lg-right">
             <i class="fas fa-plus fa-sm " ></i> Agregar Nuevo
+=======
+        <a href="#" data-toggle="modal" data-target="#modaldialog" onclick="loadData('/Dptoes/Create', 'contentdialog')"  class="btn btn-sm btn-info float-lg-right">
+            <i class="fas fa-plus fa-sm " style="color:black;"></i> Agregar Nuevo
+>>>>>>> 0366b90f880898ebe2dbed61d65db7cc3cb8723b
         </a>
         <h2 class="h3 mb-0 text-gray-800 text-center">Departamentos</h2>
 
@@ -56,9 +61,15 @@
                 @Html.DisplayFor(modelItem => item.faculta.nombre)
             </td>
             <td>
+<<<<<<< HEAD
                 <a href="#" class="btn btn-outline-warning" data-toggle="modal" data-target="#visualEditar" onclick="loadData('/Dptoes/Edit/@item.cod_dpto', 'contentedit')">  <i class='fas fa-edit'></i></a>
                 <a href="#" class="btn btn-outline-success" data-toggle="modal" data-target="#visualDetalle" onclick="loadData('/Dptoes/Details/@item.cod_dpto', 'contentdetalle')">  <i class='fas fa-eye' ></i></a>
                 <a href="#" class="btn btn-outline-danger" data-toggle="modal" data-target="#visualEliminar" onclick="loadData('/Dptoes/Delete/@item.cod_dpto', 'contenteliminar')">  <i class='fas fa-trash'></i></a>
+=======
+                <a href="#" data-toggle="modal" data-target="#visualEditar" onclick="loadData('/Dptoes/Edit/@item.cod_dpto', 'contentedit')">  <Span class='fas fa-edit' style="color:darkgoldenrod;"></Span></a>
+                <a href="#" data-toggle="modal" data-target="#visualDetalle" onclick="loadData('/Dptoes/Details/@item.cod_dpto', 'contentdetalle')">  <Span class='fas fa-eye' style="color:green;"></Span></a>
+                <a href="#" data-toggle="modal" data-target="#visualEliminar" onclick="loadData('/Dptoes/Delete/@item.cod_dpto', 'contenteliminar')">  <Span class='fas fa-trash' style="color:red;"></Span></a>
+>>>>>>> 0366b90f880898ebe2dbed61d65db7cc3cb8723b
             </td>
         </tr>
 }

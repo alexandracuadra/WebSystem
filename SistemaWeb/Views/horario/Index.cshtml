@@ -1,6 +1,21 @@
 ﻿@model SistemaWeb.Contexto.horariogeneracion
 @{
+<<<<<<< HEAD
     
+=======
+    if (ViewBag.displayRole == 0)
+    {
+        Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    }
+    else if (ViewBag.displayRole == 1)
+    {
+        Layout = "~/Views/Shared/_LayoutManager.cshtml";
+    }
+    else if (ViewBag.displayRole == 2)
+    {
+        Layout = "~/Views/Shared/_LayoutVisit.cshtml";
+    }
+>>>>>>> 0366b90f880898ebe2dbed61d65db7cc3cb8723b
     
     ViewBag.Title = "Horario";
 
@@ -8,6 +23,7 @@
 }
 
     
+<<<<<<< HEAD
 <div class="card shadow">
 
     <div class="card-header">
@@ -46,23 +62,97 @@
             @if (mensaje != null)
             {
         <div class="card-footer">
+=======
+        <div class="card shadow">
+            <div class=" card-title">
+
+                @if (mensaje != null)
+                {
+>>>>>>> 0366b90f880898ebe2dbed61d65db7cc3cb8723b
             <div class="alert alert-info alert-dismissible" role="alert">
                 <button type="button" class="close" data-dismiss="alert" aria-label="close">
                     <span aria-hidden="true">&times;</span>
 
                 </button>
                 @mensaje
+<<<<<<< HEAD
             </div>
 
         </div>
             }
+=======
+            </div>}
+            </div>
+            <div class="card-header">
+                <h2 class="h3 mb-0 text-gray-800 text-center">Generacion de horario</h2>
+                
+            </div>
+            <div class="card-body">
+                <form id="myform" enctype="multipart/form-data" method="post">
+                    <center>
+                        <div class="form-group">
+                            Seleccionar Carrera
+                            <div class="col-md-10">
+                                @Html.DropDownList("cod_carrera", null, htmlAttributes: new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.cod_carrera, "", new { @class = "text-danger" })
+                            </div>
+
+                        </div>
+
+                        <div class="form-group">
+                            Semestre
+                            <div class="col-md-10">
+                                @Html.DropDownList("tipo_ciclo", null, htmlAttributes: new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.tipo_ciclo, "", new { @class = "text-danger" })
+                            </div>
+
+                        </div>
+                 
+
+                        <div>
+                            <button type="submit" id="h" class="btn btn-success">Generar horario</button>
+                        </div>
+                    </center>
+                </form>
+
+            </div>
+
+            <div style="text-align:center;display:none" id="loaderid">
+                <img src="~/Images/loadingg.gif" width="250"/>
+            </div>
+
+        </div>
+    
+>>>>>>> 0366b90f880898ebe2dbed61d65db7cc3cb8723b
 
 
 
 
+<<<<<<< HEAD
 </div>
     
 
+=======
+
+<script>
+
+    $(document).ready(function () {
+
+        $("#h").click(function () {
+            $("#loaderid").show();
+            
+            $.ajax({
+             
+                success: function () {
+                    $("#loaderid").hide();
+
+                }
+            })
+        })
+    })
+
+</script>
+>>>>>>> 0366b90f880898ebe2dbed61d65db7cc3cb8723b
 
 
 

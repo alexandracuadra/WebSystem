@@ -14,18 +14,41 @@
     var periodo = ViewBag.Tabla1;
 
 
+<<<<<<< HEAD
+=======
+    if (ViewBag.displayRole == 0)
+    {
+        Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    }
+    else if (ViewBag.displayRole == 1)
+    {
+        Layout = "~/Views/Shared/_LayoutManager.cshtml";
+    }
+    else if (ViewBag.displayRole == 2)
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+>>>>>>> 0366b90f880898ebe2dbed61d65db7cc3cb8723b
 
     ViewBag.Title = "Horario";
 }
 
 
+<<<<<<< HEAD
 
+=======
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+>>>>>>> 0366b90f880898ebe2dbed61d65db7cc3cb8723b
 <center>
     <h1>Horario de Clases de  @todo.Rows[0].ItemArray[2].ToString()</h1>
 </center>
 
 <div>
+<<<<<<< HEAD
     <a href="/ReporProfresores/PrintAllEmployee" class="btn btn-success"> Imprimir </a>
+=======
+    <a href="/ReporProfresores/PrintAllEmployee"> Inprimir </a>
+>>>>>>> 0366b90f880898ebe2dbed61d65db7cc3cb8723b
 </div>
 
 <table class="table" border="1">

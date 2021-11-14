@@ -36,7 +36,11 @@ namespace SistemaWeb.Models
             manager.PasswordValidator = new PasswordValidator
             {
                 RequiredLength = 6,
+<<<<<<< HEAD
                 RequireNonLetterOrDigit = false,
+=======
+                RequireNonLetterOrDigit = true,
+>>>>>>> 0366b90f880898ebe2dbed61d65db7cc3cb8723b
                 RequireDigit = true,
                 RequireLowercase = true,
                 RequireUppercase = true,

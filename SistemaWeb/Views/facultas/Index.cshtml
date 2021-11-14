@@ -3,7 +3,22 @@
 @{
 
     ViewBag.Title = "Index";
+<<<<<<< HEAD
    
+=======
+    if (ViewBag.displayRole == 0)
+    {
+        Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    }
+    else if(ViewBag.displayRole == 1)
+    {
+        Layout = "~/Views/Shared/_LayoutManager.cshtml";
+    }
+    else if(ViewBag.displayRole == 2)
+    {
+        Layout = "~/Views/Shared/_LayoutVisit.cshtml";
+    }
+>>>>>>> 0366b90f880898ebe2dbed61d65db7cc3cb8723b
 
 
 }
@@ -13,9 +28,15 @@
     <div class="card-header">
 
 
+<<<<<<< HEAD
         <a href="#" data-toggle="modal" data-target="#modaldialog" onclick="loadData('/Facultas/Create', 'contentdialog')" class="btn btn-sm btn-outline-info float-lg-right">
 
             <i class="fas fa-plus fa-sm "></i> Agregar Nuevo
+=======
+        <a href="#" data-toggle="modal" data-target="#modaldialog" onclick="loadData('/Facultas/Create', 'contentdialog')" class="btn btn-sm btn-info float-lg-right">
+
+            <i class="fas fa-plus fa-sm " style="color:black;"></i> Agregar Nuevo
+>>>>>>> 0366b90f880898ebe2dbed61d65db7cc3cb8723b
         </a>
         <h2 class="h3 mb-0 text-gray-800 text-center">Facultades</h2>
     </div>
@@ -51,9 +72,15 @@
                 @Html.DisplayFor(modelItem => item.direccion)
             </td>
             <td>
+<<<<<<< HEAD
                 <a href="#" class="btn btn-outline-warning" data-toggle="modal" data-target="#visualEditar" onclick="loadData('/Facultas/Edit/@item.cod_faculta', 'contentedit')">  <i class='fas fa-edit' ></i></a>
                 <a href="#" class="btn btn-outline-success" data-toggle="modal" data-target="#visualDetalle" onclick="loadData('/Facultas/Details/@item.cod_faculta', 'contentdetalle')"> <i class='fas fa-eye'></i></a>
                 <a href="#" class="btn btn-outline-danger" data-toggle="modal" data-target="#visualEliminar" onclick="loadData('/Facultas/Delete/@item.cod_faculta', 'contenteliminar')">  <i class='fas fa-trash'></i></a>
+=======
+                <a href="#" data-toggle="modal" data-target="#visualEditar" onclick="loadData('/Facultas/Edit/@item.cod_faculta', 'contentedit')">  <Span class='fas fa-edit' style="color:darkgoldenrod;"></Span></a>
+                <a href="#" data-toggle="modal" data-target="#visualDetalle" onclick="loadData('/Facultas/Details/@item.cod_faculta', 'contentdetalle')"> <Span class='fas fa-eye' style="color:green;"></Span></a>
+                <a href="#" data-toggle="modal" data-target="#visualEliminar" onclick="loadData('/Facultas/Delete/@item.cod_faculta', 'contenteliminar')">  <Span class='fas fa-trash' style="color:red;"></Span></a>
+>>>>>>> 0366b90f880898ebe2dbed61d65db7cc3cb8723b
 
         </tr>}
 

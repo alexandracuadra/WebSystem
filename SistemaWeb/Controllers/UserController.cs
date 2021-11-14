@@ -10,7 +10,11 @@ using System.Web.Mvc;
 
 namespace SistemaWeb.Controllers
 {
+<<<<<<< HEAD
    
+=======
+    [Authorize(Roles = "Admin")]
+>>>>>>> 0366b90f880898ebe2dbed61d65db7cc3cb8723b
     public class UserController : Controller
     {
         private sistema_horarioEntities3 db = new sistema_horarioEntities3();
@@ -34,7 +38,11 @@ namespace SistemaWeb.Controllers
                     rol = 1;
 
                 }
+<<<<<<< HEAD
                 else if(IsTeacher())
+=======
+                else
+>>>>>>> 0366b90f880898ebe2dbed61d65db7cc3cb8723b
                 {
                     var usuario = User.Identity;
                     ViewBag.Name = usuario.Name;
@@ -47,8 +55,11 @@ namespace SistemaWeb.Controllers
                 ViewBag.Name = "El usuario no se ha logeado todavia";
             }
             TempData["infoRol"] = rol;
+<<<<<<< HEAD
             
 
+=======
+>>>>>>> 0366b90f880898ebe2dbed61d65db7cc3cb8723b
             return View();
         }
         public ActionResult Admin()
@@ -64,6 +75,7 @@ namespace SistemaWeb.Controllers
             return View();
 
         }
+<<<<<<< HEAD
         public ActionResult Docente()
         {            
             ViewBag.aulas = db.aulas.Count();
@@ -71,6 +83,8 @@ namespace SistemaWeb.Controllers
 
         }
 
+=======
+>>>>>>> 0366b90f880898ebe2dbed61d65db7cc3cb8723b
         private bool isAdminUser()
         {
             if (User.Identity.IsAuthenticated)
@@ -115,6 +129,7 @@ namespace SistemaWeb.Controllers
 
         }
 
+<<<<<<< HEAD
        private bool IsTeacher()
         {
             if (User.Identity.IsAuthenticated)
@@ -137,6 +152,9 @@ namespace SistemaWeb.Controllers
 
             return false;
         } 
+=======
+        
+>>>>>>> 0366b90f880898ebe2dbed61d65db7cc3cb8723b
    
     }
 }

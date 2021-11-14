@@ -1,9 +1,32 @@
 ﻿@model SistemaWeb.Contexto.horariogeneracion
 @{
+<<<<<<< HEAD
    
     ViewBag.Title = "Horario";
 }
 
+=======
+    if (ViewBag.displayRole == 0)
+    {
+        Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    }
+    else if (ViewBag.displayRole == 1)
+    {
+        Layout = "~/Views/Shared/_LayoutManager.cshtml";
+    }
+    else if (ViewBag.displayRole == 2)
+    {
+        Layout = "~/Views/Shared/_LayoutVisit.cshtml";
+    }
+    ViewBag.Title = "Horario";
+}
+
+<script type="text/javascript" src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<script src="~/Scripts/bootstrap.min.js"></script>
+
+>>>>>>> 0366b90f880898ebe2dbed61d65db7cc3cb8723b
 <!DOCTYPE html>
 
 <html>

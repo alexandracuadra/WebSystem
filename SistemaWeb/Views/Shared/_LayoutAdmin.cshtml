@@ -32,6 +32,7 @@
         <!-- Sidebar -->
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
+<<<<<<< HEAD
             @if (User.Identity.IsAuthenticated)
             {
                 <!-- Sidebar - Brand -->
@@ -195,6 +196,126 @@
             }
 
 
+=======
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/User/Index/">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-laugh-wink"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+            </a>
+
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Menus
+            </div>
+            <!-- Nav Item - Facultad -->
+            <li class="nav-item">
+                <a class="nav-link" href="/facultas/Index/">
+                    <i class="fas fa-fw fa-building"></i>
+                    <span>Facultades</span>
+                </a>
+            </li>
+
+            <!-- Nav Item - Departamentos -->
+            <li class="nav-item">
+                <a class="nav-link" href="/dptoes/index/">
+                    <i class="fas fa-fw fa-book-reader"></i>
+                    <span>Departamentos</span>
+                </a>
+            </li>
+
+
+
+            <!-- Nav Item - Carreras -->
+            <li class="nav-item">
+                <a class="nav-link" href="/carreras/index/">
+                    <i class="fas fa-fw fa-book-open"></i>
+                    <span>Carreras</span>
+                </a>
+            </li>
+
+            <!-- Nav Item - Planificacion Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                   aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-book"></i>
+                    <span>Planificacion</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Gestionar:</h6>
+                        <!-- Example single danger button -->
+                        <div class="dropdown dropright collapse-item no-arrow">
+                            <div class="dropdown-toggle " href="#" role="button"
+                                 id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Materia
+                            </div>
+
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <a class="dropdown-item" href="/materias/Index/">Componentes</a>
+
+                            </div>
+                        </div>
+                        <a class="collapse-item" href="/plans/Index/">Plan de estudio</a>
+                        <a class="collapse-item" href="/pensums/busqueda/">Pensums</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Nav Item - administracion Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAdmin" aria-expanded="true" aria-controls="collapseAdmin">
+                    <i class="fas fa-hammer"></i>
+                    <span>Administracion</span>
+                </a>
+                <div id="collapseAdmin" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+
+                        <a class="collapse-item" href="/aulas/index/">Aula</a>
+                        <a class="collapse-item" href="/tipoaulas/index/">Tipo de aula</a>
+                        <a class="collapse-item" href="/profesores/index/">Profesor</a>
+                    </div>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUser" aria-expanded="true" aria-controls="collapseAdmin">
+                    <i class="fas fa-tools"></i>
+                    <span>Usuarios</span>
+                </a>
+                <div id="collapseUser" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+
+                        <a class="collapse-item" href="/AspNetUsers/index/">
+                            Usuarios
+                        </a>
+                        <a class="collapse-item" href="/AspNetRoles/index/">Roles</a>
+                        <a class="collapse-item" href="/AspNetUserRoles/index/">Asignar roles </a>
+                    </div>
+                </div>
+            </li>
+
+
+            <!-- Nav Item - Horario Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseHorario" aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-file"></i>
+                    <span>Horario</span>
+                </a>
+                <div id="collapseHorario" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Configuraciones:</h6>
+                        <a class="collapse-item" href="/grupoes/index/">Grupos</a>
+                        <a class="collapse-item" href="/horario/index/">Generar horario</a>
+                        <a class="collapse-item" href="/EditHorarioProfesor/index/">Gestionar horario</a>
+                    </div>
+                </div>
+            </li>
+>>>>>>> 0366b90f880898ebe2dbed61d65db7cc3cb8723b
 
 
 

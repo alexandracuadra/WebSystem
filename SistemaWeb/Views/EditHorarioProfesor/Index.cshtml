@@ -1,6 +1,7 @@
 ﻿@model SistemaWeb.Contexto.horariogeneracion
 @{
     ViewBag.Title = "Horario";
+<<<<<<< HEAD
    
 }
 
@@ -12,11 +13,46 @@
         <div class="card-body">
 
 
+=======
+    if (ViewBag.displayRole == 0)
+    {
+        Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    }
+    else if (ViewBag.displayRole == 1)
+    {
+        Layout = "~/Views/Shared/_LayoutManager.cshtml";
+    }
+    else if (ViewBag.displayRole == 2)
+    {
+        Layout = "~/Views/Shared/_LayoutVisit.cshtml";
+    }
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Listas de horarios</title>
+
+</head>
+<body>
+    <div>
+
+        <center>
+
+            <h2>Listar Horarios</h2>
+>>>>>>> 0366b90f880898ebe2dbed61d65db7cc3cb8723b
             <form action="/EditHorarioProfesor/EditProfesorHorario" method="post" enctype="multipart/form-data" target="_blank">
 
                 <div class="form-group">
                     Seleccionar departamento
+<<<<<<< HEAD
                     <div class="col-md-8">
+=======
+                    <div class="col-md-10">
+>>>>>>> 0366b90f880898ebe2dbed61d65db7cc3cb8723b
                         @Html.DropDownList("cod_dpto", null, htmlAttributes: new { @class = "form-control" })
                         @Html.ValidationMessageFor(model => model.cod_dpto, "", new { @class = "text-danger" })
                     </div>
@@ -26,7 +62,11 @@
 
                 <div class="form-group">
                     Seleccionar Profesores
+<<<<<<< HEAD
                     <div class="col-md-8">
+=======
+                    <div class="col-md-10">
+>>>>>>> 0366b90f880898ebe2dbed61d65db7cc3cb8723b
                         @Html.DropDownList("profesor", null, htmlAttributes: new { @class = "form-control" })
                         @Html.ValidationMessageFor(model => model.profesor, "", new { @class = "text-danger" })
 
@@ -34,7 +74,11 @@
 
                     <div class="form-group">
                         Semestre
+<<<<<<< HEAD
                         <div class="col-md-8">
+=======
+                        <div class="col-md-10">
+>>>>>>> 0366b90f880898ebe2dbed61d65db7cc3cb8723b
                             @Html.DropDownList("tipo_ciclo", null, htmlAttributes: new { @class = "form-control" })
                             @Html.ValidationMessageFor(model => model.tipo_ciclo, "", new { @class = "text-danger" })
                         </div>
@@ -43,7 +87,11 @@
 
                     <div class="form-group">
                         Año
+<<<<<<< HEAD
                         <div class="col-md-8">
+=======
+                        <div class="col-md-10">
+>>>>>>> 0366b90f880898ebe2dbed61d65db7cc3cb8723b
                             @Html.DropDownList("año_estudio", null, htmlAttributes: new { @class = "form-control" })
                             @Html.ValidationMessageFor(model => model.año_estudio, "", new { @class = "text-danger" })
                         </div>
@@ -56,12 +104,17 @@
                 {
                     <script type="text/javascript">
                     $(function () {
+<<<<<<< HEAD
 
+=======
+                        
+>>>>>>> 0366b90f880898ebe2dbed61d65db7cc3cb8723b
                         $.notify(@ViewBag.Message, "error");
                     });
                     </script>
                 }
 
+<<<<<<< HEAD
                 <div>
 
 
@@ -82,4 +135,19 @@
 
 
 
+=======
+                <div >
+
+                    
+                    <input type="submit" class="btn btn-lg btn-primary" value="Visualizar horario" />
+                </div>
+            </form>
+        </center>
+    </div>
+
+
+
+</body>
+</html>
+>>>>>>> 0366b90f880898ebe2dbed61d65db7cc3cb8723b
 

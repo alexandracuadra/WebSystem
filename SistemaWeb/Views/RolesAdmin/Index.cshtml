@@ -1,5 +1,6 @@
 ﻿@model IEnumerable<Microsoft.AspNet.Identity.EntityFramework.IdentityRole>
 
+<<<<<<< HEAD
 
 @{ ViewBag.Title = "Index";
 
@@ -50,12 +51,56 @@
         </div>
     </div>
 </div>
+=======
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+
+                <a href="#" data-toggle="modal" data-target="#visualEditar" onclick="loadData('/RolesAdmin/Edit/@item.Id', 'contentedit')">  <Span class='btn btn-warning'> Editar </Span></a>
+                <a href="#" data-toggle="modal" data-target="#visualDetalle" onclick="loadData('/RolesAdmin/Details/@item.Id', 'contentdetalle')">  <Span class='btn btn-info'> Detalles </Span></a>
+                <a href="#" data-toggle="modal" class='btn btn-danger' data-target="#visualEliminar" onclick="loadData('/RolesAdmin/Delete/@item.Id', 'contenteliminar')">  <Span class='glyphicon glyphicon-th-list'></Span> Eliminar</a>
+            </td>
+        </tr>
+    }
+
+</table>
+>>>>>>> 0366b90f880898ebe2dbed61d65db7cc3cb8723b
 
 <div class="modal" id="modaldialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
+<<<<<<< HEAD
                 <h5 class="modal-title">Crear nuevo</h5>
+=======
+                <h5 class="modal-title">Agregar carrera nueva</h5>
+>>>>>>> 0366b90f880898ebe2dbed61d65db7cc3cb8723b
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -73,7 +118,11 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
+<<<<<<< HEAD
                 <h5 class="modal-title">Actualizar</h5>
+=======
+                <h5 class="modal-title">Actualizar carrera</h5>
+>>>>>>> 0366b90f880898ebe2dbed61d65db7cc3cb8723b
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -88,7 +137,11 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
+<<<<<<< HEAD
                 <h5 class="modal-title">Detalles</h5>
+=======
+                <h5 class="modal-title">Detalles de carrera</h5>
+>>>>>>> 0366b90f880898ebe2dbed61d65db7cc3cb8723b
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -114,5 +167,8 @@
         </div>
     </div>
 </div>
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 0366b90f880898ebe2dbed61d65db7cc3cb8723b
